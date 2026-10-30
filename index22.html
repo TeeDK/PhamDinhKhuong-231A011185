@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaLearn - Học lập trình Java</title>
+    <link rel="stylesheet" href="style22.css">
+</head>
+<body>
+<header class="topbar">
+    <a class="brand" href="#home"><span class="brand-icon">J</span> JavaLearn</a>
+    <button id="menuToggle" class="menu-toggle" aria-label="Mở menu">☰</button>
+    <nav id="mainNav">
+        <a href="#home">Trang chủ</a>
+        <a href="#chapters">Chương học</a>
+        <a href="#practice">Luyện tập</a>
+        <a href="#teacher">Giáo viên</a>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <div class="hero-text">
+        <span class="eyebrow">LEARN JAVA · BUILD YOUR FUTURE</span>
+        <h1>Chinh phục Java,<br><span>bắt đầu từ hôm nay.</span></h1>
+        <p>Học từ nền tảng đến nâng cao qua lý thuyết dễ hiểu, ví dụ trực quan và bài tập thực hành.</p>
+        <div class="hero-actions">
+            <a class="btn primary" href="#chapters">Bắt đầu học →</a>
+            <a class="btn secondary" href="#practice">Luyện tập ngay</a>
+        </div>
+        <div class="hero-stats">
+            <div><strong>06</strong><span>Chương học</span></div>
+            <div><strong>12+</strong><span>Bài tập mẫu</span></div>
+            <div><strong>100%</strong><span>Tự học chủ động</span></div>
+        </div>
+    </div>
+    <div class="hero-art">
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+        <div class="java-logo">☕<small>JAVA</small></div>
+        <div class="floating-code code-one">&lt;learn&gt;</div>
+        <div class="floating-code code-two">{ code(); }</div>
+        <div class="floating-code code-three">System.out.println()</div>
+    </div>
+</section>
+
+<main>
+<section class="section" id="chapters">
+    <div class="section-heading">
+        <span class="eyebrow">LEARNING PATH</span>
+        <h2>Lộ trình học <span>Java</span></h2>
+        <p>Chọn một chương để đọc lý thuyết và thực hành.</p>
+    </div>
+    <div class="chapter-grid" id="chapterGrid"></div>
+</section>
+
+<section class="section practice-section" id="practice">
+    <div class="section-heading">
+        <span class="eyebrow">PRACTICE MAKES PERFECT</span>
+        <h2>Phòng luyện <span>lập trình</span></h2>
+        <p>Nhập thông tin sinh viên, chọn bài tập và gửi bài làm.</p>
+    </div>
+
+    <div class="student-panel panel">
+        <div class="panel-title"><span>01</span><div><h3>Thông tin sinh viên</h3><p>Thông tin được lưu trên trình duyệt hiện tại.</p></div></div>
+        <div class="form-grid">
+            <label>Họ và tên<input id="studentName" placeholder="Nhập họ tên của bạn"></label>
+            <label>Mã số sinh viên<input id="studentId" placeholder="Nhập mã số sinh viên"></label>
+        </div>
+    </div>
+
+    <div class="panel exercise-panel">
+        <div class="exercise-toolbar">
+            <div><h3>Danh sách bài tập</h3><p>Chọn bài, xem yêu cầu và nhập lời giải.</p></div>
+            <div class="filters">
+                <input id="searchExercise" placeholder="Tìm bài tập...">
+                <select id="difficultyFilter">
+                    <option value="all">Tất cả mức độ</option>
+                    <option value="Dễ">Dễ</option>
+                    <option value="Trung bình">Trung bình</option>
+                    <option value="Khó">Khó</option>
+                </select>
+            </div>
+        </div>
+        <div id="exerciseList" class="exercise-list"></div>
+    </div>
+
+    <div class="panel editor-panel">
+        <div class="panel-title"><span>02</span><div><h3>Bài làm của bạn</h3><p>Viết chương trình Java cho bài tập đã chọn.</p></div></div>
+        <div id="selectedExercise" class="selected-exercise">Hãy chọn một bài tập trong danh sách phía trên.</div>
+        <label class="editor-label" for="codeEditor">Mã nguồn Java</label>
+        <textarea id="codeEditor" spellcheck="false" placeholder="public class Main {
+    public static void main(String[] args) {
+        // Viet code Java tai day
+    }
+}"></textarea>
+        <div class="editor-actions">
+            <button id="showSolution" class="btn secondary">Xem lời giải mẫu</button>
+            <button id="submitCode" class="btn primary">Nộp bài & xem điểm</button>
+        </div>
+        <div id="resultBox" class="result-box" aria-live="polite"></div>
+        <p class="notice">Lưu ý: phiên bản này minh họa giao diện và cách tính điểm. Trình duyệt chưa biên dịch hoặc chạy mã Java thực tế.</p>
+    </div>
+
+    <div class="panel">
+        <div class="panel-title"><span>03</span><div><h3>Lịch sử kết quả</h3><p>Các lần nộp bài trên trình duyệt này.</p></div></div>
+        <div class="table-wrap">
+            <table>
+                <thead><tr><th>Sinh viên</th><th>Mã SV</th><th>Bài tập</th><th>Điểm</th><th>Thời gian</th></tr></thead>
+                <tbody id="resultsBody"><tr><td colspan="5">Chưa có kết quả nào.</td></tr></tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<section class="section teacher-section" id="teacher">
+    <div class="section-heading">
+        <span class="eyebrow">TEACHER WORKSPACE</span>
+        <h2>Khu vực <span>giáo viên</span></h2>
+        <p>Tạo bài tập mới và đưa vào danh sách luyện tập.</p>
+    </div>
+    <div class="panel teacher-panel">
+        <form id="teacherForm">
+            <div class="form-grid">
+                <label>Tên bài tập<input id="newTitle" required placeholder="Ví dụ: Tính tổng hai số"></label>
+                <label>Chương học
+                    <select id="newChapter">
+                        <option value="1">Chương 1 - Tổng quan Java</option>
+                        <option value="2">Chương 2 - Biến và kiểu dữ liệu</option>
+                        <option value="3">Chương 3 - Câu lệnh điều kiện</option>
+                        <option value="4">Chương 4 - Vòng lặp</option>
+                        <option value="5">Chương 5 - Mảng và chuỗi</option>
+                        <option value="6">Chương 6 - Lập trình hướng đối tượng</option>
+                    </select>
+                </label>
+                <label>Mức độ
+                    <select id="newDifficulty">
+                        <option>Dễ</option><option>Trung bình</option><option>Khó</option>
+                    </select>
+                </label>
+                <label>Điểm tối đa
+                    <select id="newPoints">
+                        <option value="10">10 điểm (5 test)</option>
+                    </select>
+                </label>
+            </div>
+            <label>Đề bài<textarea id="newDescription" required rows="3" placeholder="Mô tả yêu cầu của bài tập..."></textarea></label>
+            <label>Lời giải mẫu<textarea id="newSolution" required rows="5" placeholder="Nhập lời giải Java mẫu..."></textarea></label>
+            <button type="submit" class="btn primary">＋ Tạo bài tập</button>
+            <p id="teacherMessage" class="form-message" aria-live="polite"></p>
+        </form>
+        <div class="teacher-list-heading"><h3>Bài tập do giáo viên tạo</h3><button id="clearCustomExercises" class="btn danger">Xóa bài tự tạo</button></div>
+        <div id="customExerciseList"></div>
+    </div>
+</section>
+</main>
+
+<footer>
+    <a class="brand" href="#home"><span class="brand-icon">J</span> JavaLearn</a>
+    <p>Website hỗ trợ học tập môn Lập trình Java</p>
+    <p class="copyright">© <span id="year"></span> JavaLearn · Học tập và phát triển mỗi ngày</p>
+</footer>
+<script src="jstyle22.js"></script>
+</body>
+</html>

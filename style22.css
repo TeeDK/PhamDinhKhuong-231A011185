@@ -1,0 +1,384 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap');
+
+:root {
+    --blue: #4169e1;
+    --blue-dark: #2d4db5;
+    --purple: #8565dc;
+    --ink: #25304a;
+    --muted: #74809a;
+    --bg: #f6f8ff;
+    --line: #e5eaf6;
+    --white: #fff;
+    --green: #14966a;
+    --shadow: 0 12px 35px #263f7610;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
+body { font-family: 'Be Vietnam Pro', sans-serif; color: var(--ink); background: var(--bg); line-height: 1.7; }
+a { text-decoration: none; color: inherit; }
+button, input, textarea, select { font: inherit; }
+button { cursor: pointer; }
+.topbar { height: 74px; padding: 0 8%; display: flex; align-items: center; justify-content: space-between; background: #ffffffed; border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 50; backdrop-filter: blur(14px); }
+.brand { display: inline-flex; align-items: center; gap: 10px; font-size: 21px; font-weight: 800; }
+.brand-icon { display: inline-grid; place-items: center; width: 35px; height: 35px; color: white; border-radius: 11px; background: linear-gradient(135deg, var(--blue), var(--purple)); }
+.topbar nav { display: flex; gap: 28px; }
+.topbar nav a { font-size: 13px; font-weight: 600; color: #64708a; }
+.topbar nav a:hover { color: var(--blue); }
+.menu-toggle { display: none; border: 0; background: #eaf0ff; border-radius: 9px; padding: 7px 11px; color: var(--blue); font-size: 22px; }
+
+.hero { display: grid; grid-template-columns: 1.1fr .9fr; align-items: center; gap: 35px; min-height: 535px; padding: 75px 10%; background: radial-gradient(circle at 80% 20%, #e3eaff 0, transparent 35%), linear-gradient(125deg, #fff, #f1f4ff); overflow: hidden; }
+.eyebrow { display: inline-block; color: var(--blue); background: #e9efff; border-radius: 30px; padding: 7px 13px; font-size: 10px; font-weight: 800; letter-spacing: 1.3px; }
+.hero h1 { font-size: clamp(34px, 4.3vw, 53px); line-height: 1.3; letter-spacing: -1.7px; margin: 22px 0 18px; }
+.hero h1 span, .section-heading h2 span { color: var(--blue); }
+.hero-text > p { max-width: 520px; color: var(--muted); font-size: 14px; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 27px; }
+.btn { display: inline-flex; justify-content: center; align-items: center; border: 0; border-radius: 10px; padding: 11px 17px; font-size: 12px; font-weight: 700; transition: .2s; }
+.btn:hover { transform: translateY(-2px); }
+.primary { color: white; background: linear-gradient(120deg, var(--blue), var(--purple)); box-shadow: 0 8px 20px #4169e129; }
+.secondary { color: var(--blue); background: #edf2ff; border: 1px solid #dfe7ff; }
+.danger { background: #fff0f0; color: #c44848; }
+.hero-stats { display: flex; gap: 32px; margin-top: 35px; }
+.hero-stats div { display: flex; flex-direction: column; }
+.hero-stats strong { font-size: 22px; color: var(--blue); }
+.hero-stats span { font-size: 10px; color: var(--muted); }
+
+.hero-art { min-height: 340px; position: relative; display: grid; place-items: center; }
+.orbit { position: absolute; width: 270px; height: 270px; border: 1px dashed #9caff0; border-radius: 50%; }
+.orbit-two { width: 210px; height: 210px; border-color: #c0b1ef; }
+.java-logo { position: relative; z-index: 1; width: 155px; height: 155px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 38px; background: white; box-shadow: 0 20px 55px #4c61a329; color: #e35e55; font-size: 72px; transform: rotate(-6deg); }
+.java-logo small { font-size: 11px; color: var(--blue); font-weight: 800; letter-spacing: 4px; }
+.floating-code { position: absolute; z-index: 2; background: white; color: #4566c7; border: 1px solid var(--line); border-radius: 12px; padding: 10px 14px; font-family: 'Fira Code', monospace; font-size: 11px; box-shadow: var(--shadow); animation: float 4s ease-in-out infinite; }
+.code-one { top: 36px; left: 2%; }
+.code-two { right: 1%; top: 105px; animation-delay: -1s; }
+.code-three { left: 3%; bottom: 30px; animation-delay: -2s; }
+@keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+
+.section { padding: 78px 9%; }
+.section-heading { text-align: center; margin-bottom: 35px; }
+.section-heading h2 { font-size: clamp(27px, 3vw, 36px); margin-top: 12px; letter-spacing: -.8px; }
+.section-heading p { color: var(--muted); font-size: 13px; margin-top: 6px; }
+.chapter-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.chapter-card { background: white; border: 1px solid var(--line); border-radius: 17px; padding: 23px; box-shadow: var(--shadow); transition: .25s; }
+.chapter-card:hover { transform: translateY(-5px); box-shadow: 0 18px 38px #263f761a; }
+.chapter-number { width: 44px; height: 44px; display: grid; place-items: center; border-radius: 13px; background: #eaf0ff; color: var(--blue); font-weight: 800; font-size: 17px; }
+.chapter-card h3 { margin: 15px 0 7px; font-size: 16px; }
+.chapter-card p { min-height: 48px; color: var(--muted); font-size: 12px; }
+.chapter-card button { margin-top: 17px; border: 0; background: transparent; color: var(--blue); font-size: 12px; font-weight: 800; }
+
+.practice-section { background: #eef3ff; }
+.panel { margin: 20px auto; max-width: 1100px; padding: 25px; border: 1px solid var(--line); border-radius: 18px; background: white; box-shadow: var(--shadow); }
+.panel-title { display: flex; gap: 13px; align-items: center; margin-bottom: 20px; }
+.panel-title > span { display: grid; place-items: center; flex: 0 0 42px; height: 42px; border-radius: 12px; background: #eaf0ff; color: var(--blue); font-weight: 800; }
+.panel-title h3, .exercise-toolbar h3 { font-size: 17px; }
+.panel-title p, .exercise-toolbar p { color: var(--muted); font-size: 12px; }
+.form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+label { display: block; font-size: 12px; font-weight: 700; color: #53617d; margin-bottom: 15px; }
+input, select, textarea { display: block; width: 100%; margin-top: 7px; padding: 11px 12px; border: 1px solid #dfe5f2; border-radius: 9px; outline: none; background: #fcfdff; color: var(--ink); font-size: 12px; }
+input:focus, select:focus, textarea:focus { border-color: #8ba5f6; box-shadow: 0 0 0 3px #4169e112; }
+.exercise-toolbar { display: flex; justify-content: space-between; align-items: center; gap: 15px; margin-bottom: 18px; }
+.filters { display: flex; gap: 8px; }
+.filters input, .filters select { margin: 0; min-width: 140px; }
+.exercise-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.exercise-item { border: 1px solid var(--line); border-radius: 12px; padding: 15px; }
+.exercise-item.selected { border-color: var(--blue); background: #f4f7ff; }
+.exercise-item h4 { font-size: 13px; margin: 7px 0; }
+.exercise-item p { font-size: 11px; color: var(--muted); }
+.exercise-meta { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.pill { display: inline-block; padding: 3px 8px; border-radius: 20px; background: #e9f8f0; color: #14865c; font-size: 10px; font-weight: 700; }
+.pill.medium { background: #fff4df; color: #a46b0c; }
+.pill.hard { background: #ffe8e8; color: #bd4848; }
+.exercise-item button { margin-top: 10px; padding: 7px 11px; border: 0; border-radius: 8px; background: #eaf0ff; color: var(--blue); font-size: 11px; font-weight: 700; }
+.selected-exercise { padding: 14px; margin-bottom: 16px; border-radius: 10px; background: #f4f6fc; font-size: 13px; }
+.editor-label { margin-bottom: 5px; }
+#codeEditor { min-height: 240px; resize: vertical; background: #19243a; color: #d9e6ff; font-family: 'Fira Code', monospace; font-size: 12px; line-height: 1.8; }
+.editor-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 13px; }
+.result-box { margin-top: 15px; padding: 14px; border-radius: 10px; background: #f0f8ff; font-size: 13px; display: none; }
+.result-box.show { display: block; }
+.result-box strong { color: var(--blue); }
+.notice { margin-top: 13px; font-size: 11px; color: #a16e28; }
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 12px; }
+th, td { padding: 12px 10px; border-bottom: 1px solid var(--line); text-align: left; white-space: nowrap; }
+th { color: #586782; background: #f8faff; }
+.teacher-panel form > label { margin-top: 15px; }
+.form-message { margin-top: 10px; color: var(--green); font-size: 12px; }
+.teacher-list-heading { display: flex; justify-content: space-between; align-items: center; gap: 15px; margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--line); }
+.teacher-list-heading h3 { font-size: 15px; }
+.custom-row { display: flex; align-items: center; justify-content: space-between; gap: 15px; padding: 13px 0; border-bottom: 1px solid var(--line); font-size: 12px; }
+.custom-row button { border: 0; border-radius: 7px; padding: 6px 9px; color: #b74242; background: #fff0f0; font-size: 11px; }
+.empty-state { grid-column: 1 / -1; padding: 22px; text-align: center; color: var(--muted); font-size: 12px; }
+footer { padding: 30px 8%; text-align: center; background: white; border-top: 1px solid var(--line); }
+footer p { margin-top: 5px; font-size: 12px; color: var(--muted); }
+footer .copyright { font-size: 10px; margin-top: 12px; }
+
+@media (max-width: 850px) {
+    .hero { padding: 60px 6%; }
+    .section { padding: 65px 6%; }
+    .chapter-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .hero-art { transform: scale(.9); }
+}
+@media (max-width: 650px) {
+    .topbar { padding: 0 5%; height: 65px; }
+    .menu-toggle { display: block; }
+    .topbar nav { display: none; position: absolute; top: 65px; left: 0; right: 0; padding: 15px 6%; background: white; flex-direction: column; gap: 13px; border-bottom: 1px solid var(--line); }
+    .topbar nav.open { display: flex; }
+    .hero { grid-template-columns: 1fr; text-align: center; padding: 48px 7% 25px; }
+    .hero-text > p { margin: auto; }
+    .hero-actions, .hero-stats { justify-content: center; }
+    .hero-art { min-height: 270px; transform: scale(.8); margin-top: -10px; }
+    .chapter-grid, .exercise-list, .form-grid { grid-template-columns: 1fr; }
+    .exercise-toolbar { align-items: stretch; flex-direction: column; }
+    .filters { flex-direction: column; }
+    .panel { padding: 18px; }
+    .teacher-list-heading { align-items: flex-start; flex-direction: column; }
+}
+
+/* GIAO DIEN NOI DUNG BAI HOC */
+.chapter-count {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    color: #4169e1;
+    background: #edf2ff;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.chapter-detail {
+    margin-top: 18px;
+    padding-top: 15px;
+    border-top: 1px solid #e5eaf6;
+}
+
+.lesson {
+    margin: 10px 0;
+    border: 1px solid #e5eaf6;
+    border-radius: 11px;
+    background: #fbfcff;
+    overflow: hidden;
+}
+
+.lesson summary {
+    padding: 13px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 700;
+    color: #34466d;
+    list-style: none;
+}
+
+.lesson summary::-webkit-details-marker {
+    display: none;
+}
+
+.lesson summary::after {
+    content: "+";
+    float: right;
+    color: #4169e1;
+    font-size: 18px;
+}
+
+.lesson[open] summary::after {
+    content: "−";
+}
+
+.lesson-number {
+    display: inline-block;
+    margin-right: 7px;
+    padding: 3px 7px;
+    border-radius: 6px;
+    color: #4169e1;
+    background: #eaf0ff;
+    font-size: 10px;
+}
+
+.lesson-content {
+    padding: 15px;
+    border-top: 1px solid #e5eaf6;
+    background: white;
+}
+
+.lesson-content h4 {
+    margin: 17px 0 8px;
+    color: #4169e1;
+    font-size: 12px;
+}
+
+.lesson-content h4:first-child {
+    margin-top: 0;
+}
+
+.lesson-text {
+    color: #596781;
+    font-size: 12px;
+    line-height: 1.9;
+    white-space: pre-line;
+}
+
+.lesson-content > p {
+    color: #596781;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.lesson-content .solution-preview {
+    max-height: 420px;
+    overflow: auto;
+    padding: 14px;
+    border-radius: 9px;
+    background: #19243a;
+    color: #d9e6ff;
+    font-family: 'Fira Code', monospace;
+    font-size: 11px;
+    line-height: 1.8;
+    white-space: pre-wrap;
+}
+
+.lesson-warning {
+    padding: 12px;
+    border-radius: 9px;
+    background: #fff8e9;
+    color: #93631c !important;
+}
+
+.practice-chapter-btn {
+    width: 100%;
+    margin-top: 12px;
+    padding: 12px;
+    border: none;
+    border-radius: 9px;
+    background: #4169e1;
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.practice-chapter-btn:hover {
+    background: #2d4db5;
+}
+
+
+/* ===== Bo sung hien thi danh sach 6 chuong Java ===== */
+.chapter-top { display:flex; align-items:center; justify-content:space-between; gap:12px; }
+.chapter-icon { width:48px; height:48px; display:grid; place-items:center; border-radius:14px; font-size:24px; }
+.chapter-number { color:var(--blue); font-size:11px; font-weight:800; letter-spacing:.08em; }
+.chapter-meta { display:flex; flex-wrap:wrap; gap:14px; margin-top:14px; color:var(--muted); font-size:12px; font-weight:700; }
+.chapter-card .chapter-open-btn { display:block; width:100%; padding:12px 14px; border-radius:10px; text-align:center; }
+.lesson-detail { margin:14px 0; padding:18px; background:#f8faff; border:1px solid var(--line); border-radius:14px; }
+.lesson-detail h4 { margin:0 0 10px; color:var(--ink); }
+.lesson-detail h5 { margin:14px 0 7px; color:var(--blue); }
+.lesson-detail pre { overflow:auto; padding:14px; border-radius:10px; background:#17233b; color:#edf3ff; white-space:pre-wrap; }
+.lesson-warning { padding:10px 12px; border-left:3px solid #f0b44d; background:#fff8e9; border-radius:6px; }
+@media (max-width:760px) { .chapter-meta { gap:9px; } }
+
+/* ===== HOP THOAI NOI DUNG CHUONG HOC ===== */
+#lessonModal.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: rgba(20, 31, 59, .62);
+    backdrop-filter: blur(5px);
+    overflow-y: auto;
+}
+#lessonModal.modal.hidden { display: none !important; }
+#lessonModal .lesson-modal {
+    position: relative;
+    width: min(960px, 100%);
+    max-height: min(88vh, 900px);
+    overflow-y: auto;
+    padding: clamp(22px, 4vw, 42px);
+    background: #fff;
+    border-radius: 22px;
+    box-shadow: 0 24px 80px rgba(12, 25, 55, .28);
+    color: #263653;
+}
+#lessonModal .modal-close {
+    position: sticky;
+    top: 0;
+    float: right;
+    z-index: 2;
+    width: 42px;
+    height: 42px;
+    margin: -8px -8px 8px 12px;
+    border: 0;
+    border-radius: 50%;
+    background: #eef2ff;
+    color: #385bd6;
+    font-size: 28px;
+    line-height: 1;
+    cursor: pointer;
+}
+#lessonModal h2 { margin: 12px 0 18px; color: #20345a; font-size: clamp(24px, 4vw, 34px); }
+#lessonModal h3 { margin: 26px 0 14px; color: #315bd8; }
+#lessonModal h4 { margin: 0 0 10px; color: #263b65; font-size: 18px; }
+#lessonModal h5 { margin: 16px 0 8px; color: #425b91; font-size: 14px; }
+#lessonModal p { line-height: 1.75; white-space: pre-line; }
+#lessonModal .lesson-list { padding-left: 24px; }
+#lessonModal .lesson-detail, #lessonModal .lesson-list > li {
+    margin: 12px 0;
+    padding: 18px 20px;
+    border: 1px solid #e4eaf7;
+    border-radius: 14px;
+    background: #fbfcff;
+}
+#lessonModal pre {
+    max-width: 100%;
+    overflow-x: auto;
+    padding: 16px;
+    border-radius: 12px;
+    background: #17243d;
+    color: #e9f0ff;
+    line-height: 1.65;
+    white-space: pre;
+}
+#lessonModal .lesson-warning {
+    padding: 12px 14px;
+    border-left: 4px solid #f0b44b;
+    border-radius: 8px;
+    background: #fff8e9;
+}
+#lessonModal details { margin-top: 12px; }
+#lessonModal details summary { color: #315bd8; font-weight: 700; cursor: pointer; }
+@media (max-width: 600px) {
+    #lessonModal.modal { padding: 10px; align-items: flex-start; }
+    #lessonModal .lesson-modal { max-height: 96vh; padding: 20px 15px; border-radius: 16px; }
+}
+
+
+/* ===== Danh sach bai tap phan nhom theo muc do ===== */
+.exercise-level-group { margin: 18px 0 24px; padding: 18px; border: 1px solid #e2e9f8; border-radius: 16px; background: #fff; }
+.exercise-level-heading { display:flex; align-items:center; justify-content:space-between; gap:14px; margin-bottom:14px; }
+.exercise-level-heading p { margin:8px 0 0; color:#71809e; font-size:13px; }
+.exercise-level-heading strong { color:#657493; font-size:13px; white-space:nowrap; }
+.exercise-level-items { display:grid; gap:10px; }
+.exercise-level-group .exercise-item { display:flex; align-items:center; gap:13px; width:100%; padding:14px 16px; border:1px solid #e6ebf5; border-radius:12px; background:#fbfcff; color:#243653; text-align:left; cursor:pointer; transition:.2s ease; }
+.exercise-level-group .exercise-item:hover { border-color:#9aafff; transform:translateY(-1px); }
+.exercise-level-group .exercise-item.selected { border-color:#5474ed; background:#f0f4ff; box-shadow:0 0 0 2px rgba(84,116,237,.08); }
+.exercise-item-content { display:grid; gap:5px; flex:1; min-width:0; }
+.exercise-item-content b { font-size:15px; }
+.exercise-item-content small { color:#7b89a4; line-height:1.45; }
+.exercise-level-group.easy { border-top:4px solid #28a879; }
+.exercise-level-group.medium { border-top:4px solid #e5a43a; }
+.exercise-level-group.hard { border-top:4px solid #e16c70; }
+@media(max-width:600px) {
+ .exercise-level-group { padding:12px; }
+ .exercise-level-group .exercise-item { align-items:flex-start; flex-wrap:wrap; }
+ .exercise-item-content { flex-basis:calc(100% - 35px); }
+ .exercise-level-heading { align-items:flex-start; }
+}
+
+/* Phan bai tap theo tung chuong va ba muc do */
+.chapter-exercise-group { margin: 22px 0 30px; padding: 20px; border: 1px solid #dfe7f7; border-radius: 18px; background: #f9fbff; }
+.chapter-exercise-heading { display:flex; align-items:center; gap:12px; flex-wrap:wrap; padding-bottom:14px; border-bottom:1px solid #e5ebf6; margin-bottom:16px; }
+.chapter-exercise-heading h4 { margin:0; color:#203454; font-size:18px; flex:1; }
+.chapter-exercise-number { display:inline-flex; padding:7px 11px; border-radius:9px; background:#e9efff; color:#4567dc; font-weight:800; font-size:12px; letter-spacing:.5px; }
+.chapter-exercise-count { color:#7785a1; font-size:13px; font-weight:600; }
+.chapter-exercise-group .exercise-level-group { margin:14px 0; }
+@media(max-width:700px) { .chapter-exercise-group { padding:13px; } .chapter-exercise-heading h4 { flex-basis:100%; order:3; } .chapter-exercise-count { margin-left:auto; } }
